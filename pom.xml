@@ -10,7 +10,7 @@
     </parent>
     <groupId>org.mz</groupId>
     <artifactId>FibCalc</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>v1</version>
     <name>FibCalc</name>
     <description>FibCalc</description>
     <properties>
