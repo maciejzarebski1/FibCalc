@@ -51,10 +51,10 @@ jobs:
 
       #Logowanie do GHCR
       - name: Login to Github Package Registry
-        uses: docker/login-action@master
+        uses: docker/login-action@v1
         with:
           registry: ghcr.io
-          username: ${{ secrets.gh_username }}
+          username: ${{ github.repository_owner }}
           password: ${{ secrets.gh_password }}
 
       #Zbudowanie i wypchniecie obrazu na Dockerhuba
