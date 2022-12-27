@@ -16,7 +16,8 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            name/app
+            susamogu/FibCalc
+            ghcr.io/maciejzarebski1/FibCalc
           tags: |
             type=ref,event=branch
             type=ref,event=pr
@@ -48,6 +49,13 @@ jobs:
           username: ${{secrets.DOCKER_HUB_USERNAME}}
           password: ${{secrets.DOCKER_HUB_ACCESS_TOKEN}}
 
+      #Logowanie do GHCR
+      - name: Login to Github Package Registry
+        uses: docker/login-action@master
+        with:
+          registry: ghcr.io
+          github_token: ${{ secrets.gh_token }}
+
       #Zbudowanie i wypchniecie obrazu na Dockerhuba
       - name: Build and push
         id: docker_build
@@ -64,11 +72,11 @@ jobs:
 
       #Wypchnięcie obrazu do ghcr
       # https://github.com/marketplace/actions/push-to-ghcr
-      - name: Build and publish a Docker image for ${{ github.repository }}
-        uses: macbre/push-to-ghcr@master
-        with:
-          image_name: fibcalc
-          github_token: ${{ secrets.gh_token }}
+#      - name: Build and publish a Docker image for ${{ github.repository }}
+#        uses: macbre/push-to-ghcr@master
+#        with:
+#          image_name: fibcalc
+#          github_token: ${{ secrets.gh_token }}
           
       #Przenies cache'a
       - name: Move cache
