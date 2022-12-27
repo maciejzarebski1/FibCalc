@@ -55,7 +55,7 @@ jobs:
         with:
           cache-from: type=registry,src=docker.io/susamogu/buildcache
           cache-to: type=local,dest=docker.io/susamogu/buildcache
-          platforms: linux/amd64,linux/arm64v8
+          platforms: linux/amd64
           context: .
           file: Dockerfile
           push: true
