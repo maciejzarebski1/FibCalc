@@ -3,7 +3,7 @@ on:
   push:
     branches: [ master,develop ]
     tags:
-      - 1.*
+      - '1.*'
 
 jobs:
   build:
