@@ -4,7 +4,7 @@
 FROM eclipse-temurin:17-jdk
 
 # install ssh client and git
-#RUN apk add --no-cache git
+RUN apt install -y git
 
 # Create and open directory for code
 WORKDIR /usr/fibcalc
