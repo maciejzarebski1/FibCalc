@@ -22,7 +22,6 @@ jobs:
             ghcr.io/maciejzarebski1/FibCalc
           tags: |
             type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
 
       #Skonfigurowanie dockera + buildx
       - name: Buildx set-up
