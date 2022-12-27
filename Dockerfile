@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1.2
 
 # Specify a base image
-FROM eclipse-temurin:17-jdk-alpine
+FROM eclipse-temurin:17-jdk
 
 # install ssh client and git
 #RUN apk add --no-cache git
