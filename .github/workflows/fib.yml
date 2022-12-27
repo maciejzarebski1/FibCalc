@@ -54,7 +54,8 @@ jobs:
         uses: docker/login-action@master
         with:
           registry: ghcr.io
-          github_token: ${{ secrets.gh_token }}
+          username: ${{ secrets.gh_username }}
+          password: ${{ secrets.gh_password }}
 
       #Zbudowanie i wypchniecie obrazu na Dockerhuba
       - name: Build and push
