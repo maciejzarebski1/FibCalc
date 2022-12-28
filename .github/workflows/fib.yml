@@ -65,7 +65,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           cache-from: type=registry,src=docker.io/susamogu/buildcache
-          cache-to: type=local,dest=docker.io/susamogu/buildcache
+          cache-to: type=registry,dest=docker.io/susamogu/buildcache
           platforms: linux/amd64, linux/arm64/v8
           context: .
           file: Dockerfile
