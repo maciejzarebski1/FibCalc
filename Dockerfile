@@ -17,7 +17,7 @@ RUN git clone https://github.com/maciejzarebski1/FibCalc.git .
 RUN chmod +x mvnw
 
 # Build executable .jar file with Maven wrapper
-RUN ./mvnw clean package
+RUN ./mvnw package
 
 # Run executable
 ENTRYPOINT ["java", "-jar", "/usr/fibcalc/target/FibCalc-v1.jar"]
